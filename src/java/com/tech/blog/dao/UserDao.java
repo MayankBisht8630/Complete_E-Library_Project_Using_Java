@@ -1,5 +1,6 @@
 package com.tech.blog.dao;
 import com.tech.blog.entities.user;
+import com.tech.blog.entities.wishlist;
 import java.sql.*;
 public class UserDao 
 {
@@ -128,5 +129,24 @@ public class UserDao
         }
         
      return user; 
+    }
+    
+    public boolean wishlist(wishlist wishlist)
+    {
+        boolean f =false;
+        try
+        {
+        String query1 ="insert into wishlist (bookname , authorname) values(?,?)";
+        PreparedStatement pstmt = this.con.prepareStatement(query1);
+        pstmt.setString(1,wishlist.getBookname());
+        pstmt.setString(2,wishlist.getAuthorname());
+        pstmt.executeUpdate();
+        f = true;
+        }
+        catch(Exception e)
+        {
+            
+        }
+        return f;
     }
 }

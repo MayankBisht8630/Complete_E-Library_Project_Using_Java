@@ -26,8 +26,10 @@ public class VerifyCode extends HttpServlet {
             
             if(code.equals(user.getCode()))
             {
+                Message msg =new Message("Admin Added Successful" , "Success", "alert-primary");
                 HttpSession Session = request.getSession();
-                response.sendRedirect("login_page.jsp");
+                Session.setAttribute("msgg" ,msg);
+                response.sendRedirect("admin.jsp");
                 
             }
             else

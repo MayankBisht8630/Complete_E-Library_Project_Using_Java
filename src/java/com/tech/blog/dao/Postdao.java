@@ -99,8 +99,9 @@ public class Postdao {
                 String pCode = set.getString("pCode");
                 String pPic = set.getString("pPic");
                 int userId = set.getInt("userId");
+                int pQuantity = set.getInt("pQuantity");
 
-                Post post = new Post(pid, pTitle, pContent, pCode, pPic, catId, userId);
+                Post post = new Post(pid, pTitle, pContent, pCode, pPic, catId, userId,pQuantity);
                 list.add(post);
             }
         } catch (Exception e) {

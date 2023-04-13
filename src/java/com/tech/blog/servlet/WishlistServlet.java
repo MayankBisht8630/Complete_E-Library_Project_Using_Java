@@ -1,20 +1,41 @@
 package com.tech.blog.servlet;
 
+import com.tech.blog.dao.Postdao;
+import com.tech.blog.dao.UserDao;
+import com.tech.blog.entities.*;
+import com.tech.blog.helper.ConnectionProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-
-public class wishlist extends HttpServlet {
+public class WishlistServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
+            //all data 
+            String bookname = request.getParameter("bookname");
+            String authorname = request.getParameter("authorname");
+
+            //creat wishlist object and set all the data to that object
+            wishlist w = new wishlist(bookname, authorname);
+
+            //creat UserDao object
+            UserDao dao = new UserDao(ConnectionProvider.getConnection());
+            boolean b = dao.wishlist(w);
+            if (b) {
+                HttpSession s = request.getSession();
+
+                Message m = new Message("Book Added To Wishlist Successfully", "success", "alert-success");
+                s.setAttribute("msg", m);
+                response.sendRedirect("profile.jsp");
+            }
         }
     }
 
