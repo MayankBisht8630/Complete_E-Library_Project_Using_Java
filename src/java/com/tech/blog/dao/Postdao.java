@@ -140,4 +140,22 @@ public class Postdao {
         }
         return post;
     }
+    
+    public boolean CommentPost(Comment comments) {
+        boolean f = false;
+        try {
+            String q = "insert into comments(name , comment , postId ) values( ? , ? ,? )";
+            PreparedStatement pstmt = con.prepareStatement(q);
+            pstmt.setString(1, comments.getName());
+            pstmt.setString(2, comments.getComment());
+            pstmt.setInt(3, comments.getPostId());
+            
+            pstmt.executeUpdate();
+            f = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return f;
+    }
 }

@@ -52,6 +52,10 @@
         <servlet-name>WishlistServlet</servlet-name>
         <servlet-class>com.tech.blog.servlet.WishlistServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>commentServlet</servlet-name>
+        <servlet-class>com.tech.blog.servlet.commentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>WishlistServlet</servlet-name>
         <url-pattern>/WishlistServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>commentServlet</servlet-name>
+        <url-pattern>/commentServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

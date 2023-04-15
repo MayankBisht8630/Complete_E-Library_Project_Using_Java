@@ -33,9 +33,10 @@
                 <p> Available Books Quantity : <%= p.getpQuantity() %></p>
             </div>
             <div class="card-footer text-center primary-background">
-                <a href="show_blog_page.jsp?post_id=<%= p.getPid() %>" class="btn btn-outline-light btn-sm" > Read More </a>
+                <a href="show_blog_page.jsp?post_id=<%= p.getPid() %>" class="btn btn-outline-light btn-sm" > Read </a>
                 <a href="wishlist.jsp?post_id=<%= p.getPid() %>" class="btn btn-outline-light btn-sm" ><i class="fa fa-heart"></i><span> Wishlist</span></a>
-                <a href="" class="btn btn-outline-light btn-sm" onclick="add_to_cart(<%=p.getPid()%>, '<%= p.getpTitle() %>',<%= p.getpQuantity()%>)" ><i class="fa fa-book"></i><span>Issue Book</span></a>
+                <a href="" class="btn btn-outline-light btn-sm" onclick="add_to_cart(<%=p.getPid()%>, '<%= p.getpTitle() %>',<%= p.getpQuantity()%>)" ><i class="fa fa-book"></i><span>Issue</span></a>
+                <a href="add_comment.jsp?post_id=<%=p.getPid()%>" class="btn btn-outline-light btn-sm" ><i class="fa fa-commenting-o"></i></a>
             </div>
         </div>
     </div>
