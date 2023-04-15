@@ -158,4 +158,23 @@ public class Postdao {
         }
         return f;
     }
+    
+    public boolean RatingPost(Rating rating) {
+        boolean f = false;
+        try {
+            String q = "insert into ratings(userName , review , postId , ratingValue ) values( ? , ? ,? ,? )";
+            PreparedStatement pstmt = con.prepareStatement(q);
+            pstmt.setString(1, rating.getUserName());
+            pstmt.setString(2, rating.getReview());
+            pstmt.setInt(3, rating.getPostId());
+            pstmt.setString(4, rating.getRatingValue());
+            
+            pstmt.executeUpdate();
+            f = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return f;
+    }
 }

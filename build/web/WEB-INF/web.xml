@@ -56,6 +56,10 @@
         <servlet-name>commentServlet</servlet-name>
         <servlet-class>com.tech.blog.servlet.commentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RatingServlet</servlet-name>
+        <servlet-class>com.tech.blog.servlet.RatingServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>commentServlet</servlet-name>
         <url-pattern>/commentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RatingServlet</servlet-name>
+        <url-pattern>/RatingServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

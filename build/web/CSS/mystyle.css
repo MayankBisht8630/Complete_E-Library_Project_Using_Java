@@ -33,15 +33,3 @@ body
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.scroll-bg{
-    width: 35vw;
-    margin: 10% auto;
-}
-
-.scroll-div{
-    width: 35vw;
-    height: 18vh;
-    overflow: hidden;
-    overflow: scroll;
-}

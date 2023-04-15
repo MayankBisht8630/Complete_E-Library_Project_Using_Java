@@ -93,6 +93,7 @@
                         
                         <div class ="card-footer text-center">
                             <a href="profile.jsp" class="btn btn-outline-light btn-lg primary-background"> <span class=" fa fa-hand-o-left"></span> Back </a>
+                            <a href="rating_book.jsp?post_id=<%=p.getPid()%>" class="btn btn-outline-light btn-lg primary-background"> <span class=" fa fa-globe"></span> Book Rating </a>
                         </div>
                     </div>
                 </div>
